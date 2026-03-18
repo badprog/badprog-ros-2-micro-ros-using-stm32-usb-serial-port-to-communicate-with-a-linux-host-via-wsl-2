@@ -1,5 +1,5 @@
 {
-  "name": "bp-ros2-humble-stm32-serial-micro-ros",
+  "name": "badprog-ros-2-micro-ros-using-stm32-usb-serial-port-to-communicate-with-a-linux-host-via-wsl-2",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "."
