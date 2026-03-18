@@ -1,7 +1,10 @@
 {
-  "name": "badprog-ros-2-micro-ros-using-stm32-usb-serial-port-to-communicate-with-a-linux-host-via-wsl-2",
+  "name": "${localWorkspaceFolderBasename}",
   "build": {
     "dockerfile": "Dockerfile",
+    "args": {
+      "PROJECT_NAME": "${localWorkspaceFolderBasename}"
+    },
     "context": "."
   },
   "runArgs": [
@@ -34,6 +37,6 @@
   "postStartCommand": [
     "/bin/sh",
     "-c",
-    "sudo chmod -R 777 /dev/bus/usb && sudo chown -R ubuntu:ubuntu /workspaces/ros2/"
+    "sudo chmod -R 777 /dev/bus/usb && sudo chown -R ubuntu:ubuntu /workspaces/${localWorkspaceFolderBasename}/"
   ]
 }

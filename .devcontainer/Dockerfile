@@ -23,6 +23,7 @@ ENV SHELL /bin/bash
 ARG USERNAME=ubuntu
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+ARG PROJECT_NAME
 
 # 4. Because there is no 'ubuntu' user on Ubuntu 22.04
 RUN groupadd --gid $USER_GID $USERNAME \
@@ -49,4 +50,4 @@ RUN /home/$USERNAME/.platformio/penv/bin/pip install --upgrade pip && \
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc && \
     echo 'export PATH="$PATH:$HOME/.local/bin:$PATH"' >> ~/.bashrc && \
     echo "alias l='ls -la'" >> ~/.bashrc && \
-    echo "alias me='echo badprog-ros-2-micro-ros-using-stm32-usb-serial-port-to-communicate-with-a-linux-host-via-wsl-2'" >> ~/.bashrc
+    echo "alias me='echo ${PROJECT_NAME}'" >> ~/.bashrc
