@@ -93,8 +93,10 @@ void setup()
       RCL_MS_TO_NS(1000),
       timer_callback);
 
+
   // Executors
-  rclc_executor_init(&executor, &support.context, 2, &allocator);
+  const size_t number_of_handles = 1;
+  rclc_executor_init(&executor, &support.context, number_of_handles, &allocator);
   rclc_executor_add_timer(&executor, &timer);
 
   // Reset message
