@@ -1,0 +1,39 @@
+{
+  "name": "bp-ros2-humble-stm32-serial-micro-ros",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "runArgs": [
+    "--net=host",
+    "-e",
+    "DISPLAY=${localEnv:DISPLAY}",
+    "-v",
+    "/tmp/.X11-unix:/tmp/.X11-unix",
+    "--privileged",
+    "-v",
+    "/dev:/dev"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "marus25.cortex-debug",
+        "platformio.platformio-ide",
+        "Ranch-Hand-Robotics.rde-ros-2",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "cmake.configureOnOpen": true
+      }
+    }
+  },
+  "postStartCommand": [
+    "/bin/sh",
+    "-c",
+    "sudo chmod -R 777 /dev/bus/usb && sudo chown -R ubuntu:ubuntu /workspaces/ros2/"
+  ]
+}
