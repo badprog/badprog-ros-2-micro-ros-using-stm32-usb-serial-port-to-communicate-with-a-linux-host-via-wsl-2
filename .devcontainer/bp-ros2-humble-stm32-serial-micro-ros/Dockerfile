@@ -49,4 +49,4 @@ RUN /home/$USERNAME/.platformio/penv/bin/pip install --upgrade pip && \
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc && \
     echo 'export PATH="$PATH:$HOME/.local/bin:$PATH"' >> ~/.bashrc && \
     echo "alias l='ls -la'" >> ~/.bashrc && \
-    echo "alias me='echo bp-ros2-humble-micro-ros-stm32'" >> ~/.bashrc
+    echo "alias me='echo bp-ros2-humble-stm32-serial-micro-ros'" >> ~/.bashrc
